@@ -1,0 +1,15 @@
+.grid-container {
+  display: grid;
+  width: 40vw;
+  height: 40vw;
+  position: absolute;
+  left: 500px;
+  top: 60px;
+}
+
+
+#square {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}
