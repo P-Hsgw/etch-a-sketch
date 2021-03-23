@@ -9,11 +9,11 @@ body {
 
 .grid-container {
   display: grid;
-  width: 40vw;
-  height: 40vw;
+  width: 30vw;
+  height: 30vw;
   position: absolute;
-  left: 500px;
-  top: 60px;
+  left: 660px;
+  top: 100px;
   border-style: solid;
 }
 
@@ -23,3 +23,28 @@ body {
   border-width: 1px;
 }
 
+.hero {
+  font-size: xx-large;
+  text-align: center;
+
+}
+
+.buttons {
+  width: 300px;
+  height: 400px;
+  margin-left: 460px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-content: flex;
+
+}
+
+.btn {
+  height: 50px;
+  width: 100px;
+  background-color: #7BB2D9;
+  color: #FFFFF2;
+  border-style: none;
+  font-size: large;
+}

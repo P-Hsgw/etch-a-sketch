@@ -3,9 +3,10 @@ const box = document.querySelectorAll("#square")
 const size = document.getElementById("size")
 const erase = document.getElementById("erase")
 
-// Defines default size of grid - 16x16
+// Defines default size of a grid - 16x16
 const defaultState = 16; 
 
+// Adds a typewriter effect in a title
 let typeWriterIterator = 0
 function typeWriter() {
   let txt = 'Etch-a-sketch';
@@ -17,7 +18,7 @@ function typeWriter() {
   }
 }
 
-// Creates a grid with chosen state - size and implement basic functionality of the game, while generating random colors
+// Creates a grid with chosen state/size and implement basic functionality of the game, while generating random colors
 function gridCreator(state) {
   let stateInt = parseInt(state)
   let ustateIntSquare = Math.pow(stateInt, 2)
@@ -70,4 +71,4 @@ erase.addEventListener(`click`,() => {
 
 // Initiates the grid with defaultState
 gridCreator(defaultState);
-typeWriter()
+typeWriter();
