@@ -1,18 +1,17 @@
 const container = document.querySelector(".grid-container")
 const box = document.querySelectorAll("#square")
+const btn = document.querySelector(".btn")
 
+let defaultState = 16; 
 
-function gridCreator() {
-
-  let userChoice = prompt("Wpisz liczbę")
-  userChoiceInt = parseInt(userChoice)
-  if (userChoiceInt > 100) {
+function gridCreator(state) {
+  let stateInt = parseInt(state)
+  if (stateInt > 100) {
     alert ("Error - number too big");
   } else {
-    console.log(userChoiceInt);
+    let ustateIntSquare = Math.pow(stateInt, 2)
     let i;
-    userChoiceIntSquare = Math.pow(userChoiceInt, 2)
-    for (i=0; i < userChoiceIntSquare; i++) {
+    for (i=0; i < ustateIntSquare; i++) {
       const div = document.createElement('div');
       div.setAttribute('id', 'square'); 
       container.appendChild(div);
@@ -21,9 +20,22 @@ function gridCreator() {
         e.target.style.background = `#${randomColor}`;
       });
     }
-    document.getElementById("container").style.gridTemplateColumns = `repeat(${userChoiceInt}, 1fr)`;
-
+    document.getElementById("container").style.gridTemplateColumns = `repeat(${stateInt}, 1fr)`;
   }
 }
 
-gridCreator();
+function clearGrid () {
+  const gridArray = Array.from(container.childNodes);
+  gridArray.forEach((element) => {
+    container.removeChild(element);
+  });
+}
+
+gridCreator(defaultState);
+
+btn.addEventListener(`click`, e => {
+  clearGrid()
+  let newState = prompt("Enter number from 1 to 100")
+  gridCreator(newState)
+})
+

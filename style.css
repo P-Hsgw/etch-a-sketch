@@ -1,3 +1,7 @@
+body {
+  font-family: sans-serif;
+}
+
 .grid-container {
   display: grid;
   width: 40vw;
@@ -6,7 +10,6 @@
   left: 500px;
   top: 60px;
 }
-
 
 #square {
   border-color: black;
