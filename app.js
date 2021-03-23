@@ -6,7 +6,7 @@ const erase = document.getElementById("erase")
 // Defines default size of grid - 16x16
 const defaultState = 16; 
 
-// Creates a grid with chosen state - size
+// Creates a grid with chosen state - size and implement basic functionality of the game, while generating random colors
 function gridCreator(state) {
   let stateInt = parseInt(state)
   let ustateIntSquare = Math.pow(stateInt, 2)
@@ -34,7 +34,7 @@ function clearGrid () {
 // Lets user choose the grid size and catches errors
 function gridPrompt() {
   let choice = prompt("Enter number from 1 to 100")
-  if (isNaN(choice) || choice === "") {
+  if (isNaN(choice) || choice === "" || choice === null) {
     return 16
   } else if (choice > 100) {
     alert ("Error - number too big");
@@ -42,7 +42,6 @@ function gridPrompt() {
   } else {
     return choice;
   }
-
 }
 
 // Initiates the grid with defaultState
@@ -60,3 +59,4 @@ erase.addEventListener(`click`,() => {
   clearGrid()
   gridCreator(defaultState)
 })
+
