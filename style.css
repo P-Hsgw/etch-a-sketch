@@ -28,7 +28,6 @@ body {
   font-size: xx-large;
   text-align: center;
   color: #7BB2D9;
-
 }
 
 .buttons {
@@ -39,14 +38,18 @@ body {
   display: flex;
   flex-direction: column;
   align-content: flex;
-
 }
 
 .btn {
   height: 50px;
-  width: 100px;
+  width: 130px;
   background-color: #7BB2D9;
   color: #FFFFF2;
   border-style: none;
   font-size: large;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #4190C8;
 }
