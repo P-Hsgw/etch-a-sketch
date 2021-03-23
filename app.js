@@ -6,6 +6,17 @@ const erase = document.getElementById("erase")
 // Defines default size of grid - 16x16
 const defaultState = 16; 
 
+let typeWriterIterator = 0
+function typeWriter() {
+  let txt = 'Etch-a-sketch';
+  let speed = 75;
+  if (typeWriterIterator < txt.length) {
+    document.getElementById("typing").innerHTML += txt.charAt(typeWriterIterator);
+    typeWriterIterator++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
 // Creates a grid with chosen state - size and implement basic functionality of the game, while generating random colors
 function gridCreator(state) {
   let stateInt = parseInt(state)
@@ -33,19 +44,16 @@ function clearGrid () {
 
 // Lets user choose the grid size and catches errors
 function gridPrompt() {
-  let choice = prompt("Enter number from 1 to 100")
+  let choice = prompt("Enter number from 1 to 64")
   if (isNaN(choice) || choice === "" || choice === null) {
     return 16
-  } else if (choice > 100) {
+  } else if (choice > 64) {
     alert ("Error - number too big");
     return 16
   } else {
     return choice;
   }
 }
-
-// Initiates the grid with defaultState
-gridCreator(defaultState);
 
 // Listens to user click and let him choce the grid size with gridPrompt, and resets the grid with clearGrid
 size.addEventListener(`click`, e => {
@@ -60,3 +68,6 @@ erase.addEventListener(`click`,() => {
   gridCreator(defaultState)
 })
 
+// Initiates the grid with defaultState
+gridCreator(defaultState);
+typeWriter()
