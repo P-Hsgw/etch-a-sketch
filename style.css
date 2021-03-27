@@ -35,10 +35,11 @@ body {
   width: 30vw;
   height: 30vw;
   border-style: solid;
+  margin-top: 20px;
+
 }
 
 .buttons {
-  margin-top: 20px;
   justify-content: center;
   display: flex;
   justify-content: center;
