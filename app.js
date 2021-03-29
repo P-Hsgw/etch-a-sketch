@@ -3,10 +3,10 @@ const box = document.querySelectorAll("#square")
 const size = document.getElementById("size")
 const erase = document.getElementById("erase")
 
-// Defines default size of a grid - 16x16
+// Define default size of a grid - 16x16
 const defaultState = 16; 
 
-// Adds a typewriter effect in a title
+// Add a typewriter effect in a title
 let typeWriterIterator = 0
 function typeWriter() {
   let txt = 'Etch-a-sketch';
@@ -18,7 +18,7 @@ function typeWriter() {
   }
 }
 
-// Creates a grid with chosen state/size and implement basic functionality of the game, while generating random colors
+// Create a grid with chosen state/size and implement basic functionality of the game, while generating random colors
 function gridCreator(state) {
   let stateInt = parseInt(state)
   let ustateIntSquare = Math.pow(stateInt, 2)
@@ -35,7 +35,7 @@ function gridCreator(state) {
   document.getElementById("container").style.gridTemplateColumns = `repeat(${stateInt}, 1fr)`;
 }
 
-// Clears the grid from colors
+// Clear the grid from colors
 function clearGrid () {
   const gridArray = Array.from(container.childNodes);
   gridArray.forEach((element) => {
@@ -43,7 +43,7 @@ function clearGrid () {
   });
 }
 
-// Lets user choose the grid size and catches errors
+// Let user choose the grid size and catches errors
 function gridPrompt() {
   let choice = prompt("Enter number from 1 to 64")
   if (isNaN(choice) || choice === "" || choice === null) {
@@ -56,14 +56,14 @@ function gridPrompt() {
   }
 }
 
-// Listens to user click and let him choce the grid size with gridPrompt, and resets the grid with clearGrid
+// Listen to user click and let them chose the grid size with gridPrompt, and reset the grid with clearGrid
 size.addEventListener(`click`, e => {
   clearGrid()
   let newState = gridPrompt()
   gridCreator(newState)
 })
 
-// Lets user to reset the grid with clearGrid
+// Let user reset the grid with clearGrid
 erase.addEventListener(`click`,() => {
   clearGrid()
   gridCreator(defaultState)
